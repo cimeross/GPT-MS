@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./header.css";
 import people from "../../assets/people.png";
 import ai from "../../assets/ai.png";
 
 function Header() {
+	const [email, setEmail] = useState("");
+	const [message, setMessage] = useState("");
+
+	const handleEmailChange = (event) => {
+		setEmail(event.target.value);
+	};
+
+	const validateEmail = () => {
+		if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+			setMessage("You Have Been Successfully Subscribed!");
+			setEmail("");
+		} else {
+			setMessage("Error! Please enter a valid email address.");
+		}
+	};
 	return (
 		<div className="gpt3__header section__padding" id="home">
 			<div className="gpt3__header-content">
@@ -17,8 +32,20 @@ function Header() {
 					asked of.
 				</p>
 				<div className="gpt3__header-content__input">
-					<input type="email" placeholder="Your Email Address" />
-					<button type="button">Get Started</button>
+					<div className="gpt3__header-content__input-container">
+						<input
+							type="email"
+							placeholder="Your Email Address"
+							value={email}
+							onChange={handleEmailChange}
+						/>
+						<button type="button" onClick={validateEmail}>
+							Get Started
+						</button>
+					</div>
+					<div className="gpt3__header-content__input-validation-message">
+						<small>{message}</small>
+					</div>
 				</div>
 				<div className="gpt3__header-content__people">
 					<img src={people} alt="people" />

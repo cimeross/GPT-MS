@@ -1,10 +1,14 @@
 .gpt3__blog-container_article {
 	width: 100%;
 	height: 100%;
-
 	display: flex;
 	flex-direction: column;
 	background: var(--color-footer);
+}
+
+.gpt3__blog-container_article:hover {
+	transform: translateY(-5px) scale(1);
+	transition: ease-in-out transform 0.5s;
 }
 
 .gpt3__blog-container_article-image {
@@ -22,7 +26,6 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-
 	padding: 1rem 1.5rem;
 	height: 100%;
 }
