@@ -26,6 +26,11 @@
 	flex-direction: row;
 }
 
+.gpt3__navbar-links_container a:hover {
+	color: #ff4820;
+	transition: ease-in 0.5s;
+}
+
 .gpt3__navbar-sign {
 	display: flex;
 	justify-content: flex-end;

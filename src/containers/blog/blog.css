@@ -29,7 +29,6 @@
 
 .gpt3__blog-container_groupB {
 	flex: 1;
-
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 2rem;
